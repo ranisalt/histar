@@ -1,0 +1,28 @@
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# Dependency directories
+node_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Output of 'npm pack'
+*.tgz
+
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+# yarn berry
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+# !.yarn/sdks
+!.yarn/versions
+
+# TypeScript outDir
+lib/
+
+# Visual Studio Code
+.vscode/
