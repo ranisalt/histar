@@ -1,5 +1,15 @@
 import {reduce} from './reduce'
 
+/**
+ * Computes the sum of the values in `iterable`.
+ *
+ * @param iterable - The iterable to iterate over.
+ * @returns Returns the sum.
+ * @example
+ *
+ * sum([4, 2, 8, 6])
+ * // => 20
+ */
 export const sum: {
   (iterable: Iterable<bigint>): bigint | undefined
   (iterable: Iterable<bigint>, start: bigint): bigint

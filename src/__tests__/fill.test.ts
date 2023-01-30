@@ -1,5 +1,5 @@
 import test from 'ava'
-import {fill, map} from '..'
+import {enumerate, fill, map} from '..'
 
 const array = [1, 2, 3]
 
@@ -43,7 +43,7 @@ test('fill#should work as an iteratee for methods like `map`', (t) => {
     [3, 4],
   ]
   t.deepEqual(
-    [...map(array, (value, index) => [...fill(value, index)])],
+    [...map(enumerate(array), ([index, value]) => [...fill(value, index)])],
     [
       [0, 0],
       [1, 1],

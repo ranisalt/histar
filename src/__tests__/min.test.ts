@@ -11,8 +11,8 @@ test('min#should return undefined for empty arrays', (t) => {
   t.is(min<unknown>([]), undefined)
 })
 
-test('min#should take a key function', (t) => {
-  t.is(min(array, Math.abs), 1)
+test('minBy#should take a key function', (t) => {
+  t.is(minBy(array, Math.abs), 1)
 })
 
 // Test('minBy#should return undefined for empty arrays', (t) => {

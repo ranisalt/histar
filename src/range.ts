@@ -9,8 +9,45 @@ export type Range = ArrayLike<number> &
     reverse(): Range
   }
 
-// Export function range(end: number): Range;
-// export function range(start: number, end: number, step?: number): Range;
+/**
+ * Creates an iterable of numbers (positive and/or negative) progressing from
+ * `start` up to, but not including, `end`. A step of `-1` is used if a negative
+ * `start` is specified without an `end` or `step`. If `end` is not specified,
+ * it's set to `start`, and `start` is then set to `0`.
+ *
+ * **Note:** JavaScript follows the IEEE-754 standard for resolving
+ * floating-point values which can produce unexpected results.
+ *
+ * @param start - The start of the range.
+ * @param end - The end of the range. If `end` is not specified, it's set to
+ *   `start`, and `start` is then set to `0`.
+ * @param step - The value to increment or decrement by. If `step` is not
+ *   specified, it's set to `1` if `start` is less than `end`, otherwise `-1`.
+ * @returns Returns the range of numbers.
+ * @see {@link rangeRight}
+ * @example
+ *
+ * [...range(4)]
+ * // => [0, 1, 2, 3]
+ *
+ * [...range(-4)]
+ * // => [0, -1, -2, -3]
+ *
+ * [...range(1, 5)]
+ * // => [1, 2, 3, 4]
+ *
+ * [...range(0, 20, 5)]
+ * // => [0, 5, 10, 15]
+ *
+ * [...range(0, -4, -1)]
+ * // => [0, -1, -2, -3]
+ *
+ * [...range(1, 4, 0)]
+ * // => [1, 1, 1]
+ *
+ * [...range(0)]
+ * // => []
+ */
 export function range(start: number, end?: number, step?: number): Range {
   const start_ = end === undefined ? 0 : start
   const end_ = end ?? start
@@ -64,5 +101,39 @@ export function range(start: number, end?: number, step?: number): Range {
   )
 }
 
+/**
+ * This method is like `range` except that it populates values in descending
+ * order.
+ *
+ * @param start - The start of the range.
+ * @param end - The end of the range. If `end` is not specified, it's set to
+ *   `start`, and `start` is then set to `0`.
+ * @param step - The value to increment or decrement by. If `step` is not
+ *   specified, it's set to `1` if `start` is less than `end`, otherwise `-1`.
+ * @returns Returns the range of numbers.
+ * @see {@link range}
+ * @example
+ *
+ * [...rangeRight(4)]
+ * // => [3, 2, 1, 0]
+ *
+ * [...rangeRight(-4)]
+ * // => [-3, -2, -1, 0]
+ *
+ * [...rangeRight(1, 5)]
+ * // => [4, 3, 2, 1]
+ *
+ * [...rangeRight(0, 20, 5)]
+ * // => [15, 10, 5, 0]
+ *
+ * [...rangeRight(0, -4, -1)]
+ * // => [-3, -2, -1, 0]
+ *
+ * [...rangeRight(1, 4, 0)]
+ * // => [1, 1, 1]
+ *
+ * [...rangeRight(0)]
+ * // => []
+ */
 export const rangeRight = (start: number, end?: number, step?: number) =>
   range(start, end, step).reverse()

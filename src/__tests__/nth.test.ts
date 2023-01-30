@@ -1,10 +1,10 @@
 import test from 'ava'
-import {map, nth} from '..'
+import {enumerate, map, nth} from '..'
 
 test('nth#should get the nth element of `array`', (t) => {
   t.deepEqual(
     [
-      ...map(['a', 'b', 'c', 'd'], (_, index) =>
+      ...map(enumerate(['a', 'b', 'c', 'd']), ([index]) =>
         nth(['a', 'b', 'c', 'd'], index),
       ),
     ],

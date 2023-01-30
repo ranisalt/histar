@@ -29,7 +29,7 @@ test('reduce#should provide correct `iteratee` arguments when iterating an array
     0,
   )
 
-  t.deepEqual(args, [0, 1, 0])
+  t.deepEqual(args, [0, 1])
 
   args = undefined
   reduce(array, (...iterArgs) => {
@@ -37,5 +37,5 @@ test('reduce#should provide correct `iteratee` arguments when iterating an array
     return iterArgs[0]
   })
 
-  t.deepEqual(args, [1, 2, 1])
+  t.deepEqual(args, [1, 2])
 })

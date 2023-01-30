@@ -11,8 +11,8 @@ test('max#should return undefined for empty arrays', (t) => {
   t.is(max<unknown>([]), undefined)
 })
 
-test('max#should take a key function', (t) => {
-  t.is(max(array, Math.abs), -4)
+test('maxBy#should take a key function', (t) => {
+  t.is(maxBy(array, Math.abs), -4)
 })
 
 // Test('maxBy#should return undefined for empty arrays', (t) => {
