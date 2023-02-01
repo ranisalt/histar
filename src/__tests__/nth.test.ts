@@ -1,7 +1,7 @@
 import test from 'ava'
 import {enumerate, map, nth} from '..'
 
-test('nth#should get the nth element of `array`', (t) => {
+test('should get the nth element of `array`', (t) => {
   t.deepEqual(
     [
       ...map(enumerate(['a', 'b', 'c', 'd']), ([index]) =>
@@ -12,11 +12,11 @@ test('nth#should get the nth element of `array`', (t) => {
   )
 })
 
-test('nth#should return `undefined` for empty arrays', (t) => {
+test('should return `undefined` for empty arrays', (t) => {
   t.is(nth<unknown>([], 1), undefined)
 })
 
-test('nth#should return `undefined` for non-indexes', (t) => {
+test('should return `undefined` for non-indexes', (t) => {
   const array = [1, 2]
   const values = [Number.POSITIVE_INFINITY, array.length]
   // eslint-disable-next-line @typescript-eslint/no-empty-function

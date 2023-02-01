@@ -1,7 +1,7 @@
 import test from 'ava'
 import {enumerate} from '..'
 
-test('enumerate#should combine elements with indices', (t) => {
+test('should combine elements with indices', (t) => {
   const array1 = [5, 7, 9]
 
   t.deepEqual(
@@ -14,7 +14,7 @@ test('enumerate#should combine elements with indices', (t) => {
   )
 })
 
-test('enumerate#should accept a `start` parameter and index from that', (t) => {
+test('should accept a `start` parameter and index from that', (t) => {
   const array1 = [5, 7, 9]
 
   t.deepEqual(

@@ -1,12 +1,12 @@
 import test from 'ava'
-import {initial, map} from '..'
+import {map, tail} from '..'
 
-test('should exclude last element', (t) => {
-  t.deepEqual([...initial([1, 2, 3])], [1, 2])
+test('should exclude the first element', (t) => {
+  t.deepEqual([...tail([1, 2, 3])], [2, 3])
 })
 
 test('should return an empty when querying empty arrays', (t) => {
-  t.deepEqual([...initial([])], [])
+  t.deepEqual([...tail([])], [])
 })
 
 test('should work as an iteratee for methods like `map`', (t) => {
@@ -17,11 +17,11 @@ test('should work as an iteratee for methods like `map`', (t) => {
   ]
 
   t.deepEqual(
-    [...map(array, (value) => [...initial(value)])],
+    [...map(array, (value) => [...tail(value)])],
     [
-      [1, 2],
-      [4, 5],
-      [7, 8],
+      [2, 3],
+      [5, 6],
+      [8, 9],
     ],
   )
 })

@@ -1,5 +1,5 @@
 import test from 'ava'
-import {flatten} from '..'
+import {flattenDeep} from '..'
 
 test('should treat sparse arrays as dense', (t) => {
   const array = [[1, 2, 3], Array.from({length: 3})]
@@ -7,13 +7,13 @@ test('should treat sparse arrays as dense', (t) => {
 
   expected.push(undefined, undefined, undefined)
 
-  t.deepEqual([...flatten(array)], expected)
+  t.deepEqual([...flattenDeep(array)], expected)
 })
 
 test('should work with empty arrays', (t) => {
-  t.deepEqual([...flatten([[], [[]], [[], [[[]]]]])], [[], [], [[[]]]])
+  t.deepEqual([...flattenDeep([[], [[]], [[], [[[]]]]])], [])
 })
 
 test('should support flattening of nested arrays', (t) => {
-  t.deepEqual([...flatten([1, [2, [3, [4]], 5]])], [1, 2, [3, [4]], 5])
+  t.deepEqual([...flattenDeep([1, [2, [3, [4]], 5]])], [1, 2, 3, 4, 5])
 })

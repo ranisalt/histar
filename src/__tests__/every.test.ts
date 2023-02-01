@@ -1,11 +1,11 @@
 import test from 'ava'
 import {all, every} from '..'
 
-test('every#should return `true` if `predicate` returns truthy for all elements', (t) => {
+test('should return `true` if `predicate` returns truthy for all elements', (t) => {
   t.true(every([true, 1, 'a'], Boolean))
 })
 
-test('every#should return `true` for empty collections', (t) => {
+test('should return `true` for empty collections', (t) => {
   t.true(every([], Boolean))
   t.true(every('', Boolean))
 })
@@ -23,10 +23,10 @@ test('should return `false` as soon as `predicate` returns falsey', (t) => {
   t.is(count, 2)
 })
 
-test('every#should work with collections of `undefined` values (test in IE < 9)', (t) => {
+test('should work with collections of `undefined` values (test in IE < 9)', (t) => {
   t.false(every([undefined, undefined, undefined], Boolean))
 })
 
-test('every#should be aliased to `all`', (t) => {
+test('should be aliased to `all`', (t) => {
   t.is(every, all)
 })

@@ -3,7 +3,7 @@ import {chunk} from '..'
 
 const array = [0, 1, 2, 3, 4, 5]
 
-test('chunk#should return chunked arrays', (t) => {
+test('should return chunked arrays', (t) => {
   t.deepEqual(
     [...chunk(array, 3)],
     [
@@ -13,7 +13,7 @@ test('chunk#should return chunked arrays', (t) => {
   )
 })
 
-test('chunk#should return the last chunk as remaining elements', (t) => {
+test('should return the last chunk as remaining elements', (t) => {
   t.deepEqual(
     [...chunk(array, 4)],
     [

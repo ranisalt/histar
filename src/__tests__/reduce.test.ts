@@ -3,21 +3,21 @@ import {reduce} from '..'
 
 const array = [1, 2, 3]
 
-test('reduce#should use the first element of a collection as the default `accumulator`', (t) => {
+test('should use the first element of a collection as the default `accumulator`', (t) => {
   t.is(
     reduce(array, (x) => x),
     1,
   )
 })
 
-test('reduce#should return initial value for empty arrays', (t) => {
+test('should return initial value for empty arrays', (t) => {
   t.is(
     reduce<unknown>([], (x) => x),
     undefined,
   )
 })
 
-test('reduce#should provide correct `iteratee` arguments when iterating an array', (t) => {
+test('should provide correct `iteratee` arguments when iterating an array', (t) => {
   let args: any
 
   reduce(
