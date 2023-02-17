@@ -35,5 +35,3 @@ export const every = <T>(
 
   return true
 }
-
-export const all = every

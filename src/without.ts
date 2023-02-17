@@ -1,5 +1,5 @@
 import {filter} from './filter'
-import {indexOf} from './find-index'
+import {indexOf} from './index-of'
 
 /**
  * Creates an iterable excluding all given values using `===` for equality

@@ -1,6 +1,6 @@
 import {filter} from './filter'
 import {map} from './map'
-import {zip} from './zip-with'
+import {zip} from './zip'
 
 /**
  * Creates an iterator that filters elements from `iterable` returning only

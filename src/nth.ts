@@ -1,4 +1,4 @@
-import {drop} from './drop-while'
+import {drop} from './drop'
 import {head} from './head'
 
 /**

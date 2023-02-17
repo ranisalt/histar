@@ -1,5 +1,5 @@
 import {range} from './range'
-import {zip} from './zip-with'
+import {zip} from './zip'
 
 /**
  * Enumerate an iterable, starting from a given number.
