@@ -1,4 +1,5 @@
-import {describe, expect, it} from 'vitest'
+import assert from 'node:assert/strict'
+import {describe, it} from 'node:test'
 import {compact} from '../compact.mjs'
 
 /** Used to provide falsey values to methods. */
@@ -9,6 +10,6 @@ describe('compact', () => {
   it('should filter falsey values', () => {
     const array = ['0', '1', '2']
 
-    expect([...compact([...falsey, ...array])]).toEqual(array)
+    assert.deepEqual([...compact([...falsey, ...array])], array)
   })
 })

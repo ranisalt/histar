@@ -19,6 +19,6 @@ import {reduce} from './reduce.mjs'
  */
 export function maxBy(iterable, iteratee) {
   return reduce(iterable, (accumulator, value) =>
-    iteratee(accumulator) < iteratee(value) ? value : accumulator
+    iteratee(accumulator) < iteratee(value) ? value : accumulator,
   )
 }

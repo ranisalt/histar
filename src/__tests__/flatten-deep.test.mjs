@@ -1,4 +1,5 @@
-import {describe, expect, it} from 'vitest'
+import assert from 'node:assert/strict'
+import {describe, it} from 'node:test'
 import {flattenDeep} from '../flatten-deep.mjs'
 
 describe('flattenDeep', () => {
@@ -8,14 +9,14 @@ describe('flattenDeep', () => {
 
     expected.push(undefined, undefined, undefined)
 
-    expect([...flattenDeep(array)]).toEqual(expected)
+    assert.deepEqual([...flattenDeep(array)], expected)
   })
 
   it('should work with empty arrays', () => {
-    expect([...flattenDeep([[], [[]], [[], [[[]]]]])]).toEqual([])
+    assert.deepEqual([...flattenDeep([[], [[]], [[], [[[]]]]])], [])
   })
 
   it('should support flattening of nested arrays', () => {
-    expect([...flattenDeep([1, [2, [3, [4]], 5]])]).toEqual([1, 2, 3, 4, 5])
+    assert.deepEqual([...flattenDeep([1, [2, [3, [4]], 5]])], [1, 2, 3, 4, 5])
   })
 })

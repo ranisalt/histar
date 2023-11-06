@@ -20,6 +20,6 @@ export function zip(iterable1, iterable2) {
   return zipWith(
     iterable1,
     iterable2,
-    /** @returns {[T, U]} */ (a, b) => [a, b]
+    /** @returns {[T, U]} */ (a, b) => [a, b],
   )
 }

@@ -24,7 +24,7 @@ export function* dropWhile(
    * @param element The current element.
    * @returns Returns `true` to drop the element, else `false`.
    */
-  predicate
+  predicate,
 ) {
   const iterator = iterable[Symbol.iterator]()
 

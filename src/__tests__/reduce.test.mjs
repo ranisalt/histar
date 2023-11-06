@@ -1,15 +1,19 @@
-import {describe, expect, it} from 'vitest'
+import assert from 'node:assert/strict'
+import {describe, it} from 'node:test'
 import {reduce} from '../reduce.mjs'
 
 const array = [1, 2, 3]
 
 describe('reduce', () => {
   it('should use the first element of a collection as the default `accumulator`', () => {
-    expect(reduce(array, (x) => x)).toBe(1)
+    assert.equal(
+      reduce(array, (x) => x),
+      1,
+    )
   })
 
   it('should return initial value for empty arrays', () => {
-    expect(reduce([], (x) => x)).toBeUndefined()
+    assert(reduce([], (x) => x) === undefined)
   })
 
   it('should provide correct `iteratee` arguments when iterating an array', () => {
@@ -21,10 +25,10 @@ describe('reduce', () => {
         args ||= iterArgs
         return 0
       },
-      0
+      0,
     )
 
-    expect(args).toEqual([0, 1])
+    assert.deepEqual(args, [0, 1])
 
     args = undefined
     reduce(array, (...iterArgs) => {
@@ -32,6 +36,6 @@ describe('reduce', () => {
       return iterArgs[0]
     })
 
-    expect(args).toEqual([1, 2])
+    assert.deepEqual(args, [1, 2])
   })
 })

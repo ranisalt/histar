@@ -9,10 +9,10 @@ import {reduce} from './reduce.mjs'
  * @overload
  * @param {Iterable<bigint>} iterable - The iterable to iterate over.
  * @param {bigint} start - The starting value.
- * @returns /
- *
- * /**{bigint} Returns the sum.
- *
+ * @returns {bigint} Returns the sum.
+ */
+
+/**
  * @overload
  * @param {Iterable<number>} iterable - The iterable to iterate over.
  * @returns {number | undefined} Returns the sum.

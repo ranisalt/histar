@@ -11,5 +11,5 @@
  * @template U
  * @callback NarrowingPredicate
  * @param {T} element The current element.
- * @returns {element is U}
+ * @returns {asserts element is U}
  */

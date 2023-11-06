@@ -21,6 +21,6 @@ export function countBy(iterable, iteratee) {
       const key = iteratee(element)
       return {...accumulator, [key]: (accumulator[key] ?? 0) + 1}
     },
-    {}
+    {},
   )
 }

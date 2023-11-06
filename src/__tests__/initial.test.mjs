@@ -1,14 +1,15 @@
-import {describe, expect, it} from 'vitest'
+import assert from 'node:assert/strict'
+import {describe, it} from 'node:test'
 import {initial} from '../initial.mjs'
 import {map} from '../map.mjs'
 
 describe('initial', () => {
   it('should exclude last element', () => {
-    expect([...initial([1, 2, 3])]).toEqual([1, 2])
+    assert.deepEqual([...initial([1, 2, 3])], [1, 2])
   })
 
   it('should return an empty when querying empty arrays', () => {
-    expect([...initial([])]).toEqual([])
+    assert.deepEqual([...initial([])], [])
   })
 
   it('should work as an iteratee for methods like `map`', () => {
@@ -18,10 +19,13 @@ describe('initial', () => {
       [7, 8, 9],
     ]
 
-    expect([...map(array, (value) => [...initial(value)])]).toEqual([
-      [1, 2],
-      [4, 5],
-      [7, 8],
-    ])
+    assert.deepEqual(
+      [...map(array, (value) => [...initial(value)])],
+      [
+        [1, 2],
+        [4, 5],
+        [7, 8],
+      ],
+    )
   })
 })

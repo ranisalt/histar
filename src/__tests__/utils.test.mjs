@@ -1,50 +1,51 @@
-/* eslint-disable @typescript-eslint/no-empty-function,prefer-rest-params */
-import {describe, expect, it} from 'vitest'
+/* eslint-disable prefer-rest-params */
+import assert from 'node:assert/strict'
+import {describe, it} from 'node:test'
 import {isArrayLike, isIterable} from '../utils.mjs'
 
 describe('utils', () => {
   it('isArrayLike#should return true for arrays', () => {
-    expect(isArrayLike([1, 2, 3])).toBeTruthy()
+    assert(isArrayLike([1, 2, 3]))
   })
 
   it('isArrayLike#should return true for strings', () => {
-    expect(isArrayLike('abc')).toBeTruthy()
+    assert(isArrayLike('abc'))
   })
 
   it('isArrayLike#should return true for arguments', function (_, ...args) {
-    expect(isArrayLike(arguments)).toBeTruthy()
-    expect(isArrayLike(args)).toBeTruthy()
+    assert(isArrayLike(arguments))
+    assert(isArrayLike(args))
   })
 
   it('isArrayLike#should return false for objects with invalid length', () => {
-    expect(isArrayLike({length: 'abc'})).toBeFalsy()
-    expect(isArrayLike({length: -1})).toBeFalsy()
-    expect(isArrayLike({length: Number.MAX_SAFE_INTEGER + 1})).toBeFalsy()
+    assert(!isArrayLike({length: 'abc'}))
+    assert(!isArrayLike({length: -1}))
+    assert(!isArrayLike({length: Number.MAX_SAFE_INTEGER + 1}))
   })
 
   it('isArrayLike#should return false for non-array-like objects', () => {
-    expect(isArrayLike({})).toBeFalsy()
-    expect(isArrayLike(null)).toBeFalsy()
-    expect(isArrayLike(undefined)).toBeFalsy()
-    expect(isArrayLike(1)).toBeFalsy()
-    expect(isArrayLike(true)).toBeFalsy()
-    expect(isArrayLike(false)).toBeFalsy()
-    expect(isArrayLike(() => {})).toBeFalsy()
-    expect(isArrayLike(/regex/)).toBeFalsy()
-    expect(isArrayLike(new Date())).toBeFalsy()
-    expect(isArrayLike(new Error('hello'))).toBeFalsy()
-    expect(isArrayLike(new Map())).toBeFalsy()
-    expect(isArrayLike(new Set())).toBeFalsy()
-    expect(isArrayLike(new WeakMap())).toBeFalsy()
-    expect(isArrayLike(new WeakSet())).toBeFalsy()
-    expect(isArrayLike(new Promise(() => {}))).toBeFalsy()
+    assert(!isArrayLike({}))
+    assert(!isArrayLike(null))
+    assert(!isArrayLike(undefined))
+    assert(!isArrayLike(1))
+    assert(!isArrayLike(true))
+    assert(!isArrayLike(false))
+    assert(!isArrayLike(() => {}))
+    assert(!isArrayLike(/regex/))
+    assert(!isArrayLike(new Date()))
+    assert(!isArrayLike(new Error('hello')))
+    assert(!isArrayLike(new Map()))
+    assert(!isArrayLike(new Set()))
+    assert(!isArrayLike(new WeakMap()))
+    assert(!isArrayLike(new WeakSet()))
+    assert(!isArrayLike(new Promise(() => {})))
   })
 
   it('isIterable#should return true for array-like objects', function (_, ...args) {
-    expect(isIterable([1, 2, 3])).toBeTruthy()
-    expect(isIterable('abc')).toBeTruthy()
-    expect(isIterable(arguments)).toBeTruthy()
-    expect(isIterable(args)).toBeTruthy()
+    assert(isIterable([1, 2, 3]))
+    assert(isIterable('abc'))
+    assert(isIterable(arguments))
+    assert(isIterable(args))
   })
 
   it('isIterable#should return true for generators', () => {
@@ -52,22 +53,22 @@ describe('utils', () => {
       yield 1
     }
 
-    expect(isIterable(generator())).toBeTruthy()
+    assert(isIterable(generator()))
   })
 
   it('isIterable#should return false for non-iterable objects', () => {
-    expect(isIterable({})).toBeFalsy()
-    expect(isIterable(null)).toBeFalsy()
-    expect(isIterable(undefined)).toBeFalsy()
-    expect(isIterable(1)).toBeFalsy()
-    expect(isIterable(true)).toBeFalsy()
-    expect(isIterable(false)).toBeFalsy()
-    expect(isIterable(() => {})).toBeFalsy()
-    expect(isIterable(/regex/)).toBeFalsy()
-    expect(isIterable(new Date())).toBeFalsy()
-    expect(isIterable(new Error('hello'))).toBeFalsy()
-    expect(isIterable(new WeakMap())).toBeFalsy()
-    expect(isIterable(new WeakSet())).toBeFalsy()
-    expect(isIterable(new Promise(() => {}))).toBeFalsy()
+    assert(!isIterable({}))
+    assert(!isIterable(null))
+    assert(!isIterable(undefined))
+    assert(!isIterable(1))
+    assert(!isIterable(true))
+    assert(!isIterable(false))
+    assert(!isIterable(() => {}))
+    assert(!isIterable(/regex/))
+    assert(!isIterable(new Date()))
+    assert(!isIterable(new Error('hello')))
+    assert(!isIterable(new WeakMap()))
+    assert(!isIterable(new WeakSet()))
+    assert(!isIterable(new Promise(() => {})))
   })
 })

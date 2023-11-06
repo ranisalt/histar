@@ -24,7 +24,7 @@ export function* fill(
   iterable,
   value,
   start = 0,
-  end = Number.MAX_SAFE_INTEGER
+  end = Number.MAX_SAFE_INTEGER,
 ) {
   const iterator = iterable[Symbol.iterator]()
 

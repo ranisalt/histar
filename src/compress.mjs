@@ -19,6 +19,6 @@ import {zip} from './zip.mjs'
 export function compress(iterable, selectors) {
   return map(
     filter(zip(iterable, selectors), ([, selector]) => selector),
-    ([element]) => element
+    ([element]) => element,
   )
 }

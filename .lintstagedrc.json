@@ -1,1 +1,1 @@
-{"*.mts": ["pnpm lint --fix", "vitest related --run"]}
+{"*.mjs": ["pnpm lint --fix", "node --test"]}

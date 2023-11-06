@@ -105,6 +105,6 @@ export function range(start, end, step) {
 
         return target[name]
       },
-    }
+    },
   )
 }

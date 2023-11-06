@@ -1,4 +1,5 @@
-import {describe, expect, it} from 'vitest'
+import assert from 'node:assert/strict'
+import {describe, it} from 'node:test'
 import {zipWith} from '../zip-with.mjs'
 
 describe('zipWith', () => {
@@ -6,19 +7,19 @@ describe('zipWith', () => {
     const array1 = [1, 2, 3]
     const array2 = [4, 5, 6]
 
-    expect([...zipWith(array1, array2, (a, b) => a + b)]).toEqual([5, 7, 9])
+    assert.deepEqual([...zipWith(array1, array2, (a, b) => a + b)], [5, 7, 9])
   })
 
   it('should provide correct `iteratee` arguments', () => {
     let args
 
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+      // eslint-disable-next-line no-unused-expressions
     ;[
       ...zipWith([1, 2], [3, 4], (...iterArgs) => {
         args ||= iterArgs
       }),
     ]
 
-    expect(args).toEqual([1, 3])
+    assert.deepEqual(args, [1, 3])
   })
 })

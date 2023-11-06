@@ -1,8 +1,9 @@
-import {describe, expect, it} from 'vitest'
+import assert from 'node:assert/strict'
+import {describe, it} from 'node:test'
 import {map} from '../map.mjs'
 
 describe('map', () => {
   it('should map values in `collection` to a new array', () => {
-    expect([...map([1, 2], String)]).toEqual(['1', '2'])
+    assert.deepEqual([...map([1, 2], String)], ['1', '2'])
   })
 })

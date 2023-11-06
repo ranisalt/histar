@@ -1,14 +1,15 @@
-import {describe, expect, it} from 'vitest'
+import assert from 'node:assert/strict'
+import {describe, it} from 'node:test'
 import {last} from '../last.mjs'
 import {map} from '../map.mjs'
 
 describe('last', () => {
   it('should return the last element', () => {
-    expect(last([1, 2, 3, 4])).toBe(4)
+    assert.equal(last([1, 2, 3, 4]), 4)
   })
 
   it('should return `undefined` when querying empty arrays', () => {
-    expect(last([])).toBeUndefined()
+    assert(last([]) === undefined)
   })
 
   it('should work as an iteratee for methods like `map`', () => {
@@ -18,6 +19,6 @@ describe('last', () => {
       [7, 8, 9],
     ]
 
-    expect([...map(array, last)]).toEqual([3, 6, 9])
+    assert.deepEqual([...map(array, last)], [3, 6, 9])
   })
 })

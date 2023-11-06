@@ -29,23 +29,15 @@ export function* chunk(iterable, size) {
     yield [
       ...map(
         filter(
-          // eslint-disable-next-line @typescript-eslint/no-loop-func
-          times(
-            size,
-            /** @type {import('./times.mjs').TimesIteratee<IteratorResult<T>>} */
-            () => {
-              const previousResult = result
-              result = iterator.next()
-              return previousResult
-            }
-          ),
-          /**
-           * @returns {result is IteratorResult<T> & { done: true }}
-           */
-          (result) => !result.done
+          times(size, () => {
+            const previousResult = result
+            result = iterator.next()
+            return previousResult
+          }),
+          (result) => !result.done,
         ),
         /** @returns {T} */
-        ({value}) => value
+        ({value}) => value,
       ),
     ]
   }

@@ -1,16 +1,17 @@
-import {describe, expect, it} from 'vitest'
+import assert from 'node:assert/strict'
+import {describe, it} from 'node:test'
 import {takeWhile} from '../take-while.mjs'
 
 describe('takeWhile', () => {
   it('should take the first two elements', () => {
-    expect([...takeWhile([1, 2, 3], (x) => x <= 2)]).toEqual([1, 2])
+    assert.deepEqual([...takeWhile([1, 2, 3], (x) => x <= 2)], [1, 2])
   })
 
   it('should return an empty array when predicate always returns false', () => {
-    expect([...takeWhile([1, 2, 3], () => false)]).toEqual([])
+    assert.deepEqual([...takeWhile([1, 2, 3], () => false)], [])
   })
 
   it('should return all elements when predicate always returns true', () => {
-    expect([...takeWhile([1, 2, 3], () => true)]).toEqual([1, 2, 3])
+    assert.deepEqual([...takeWhile([1, 2, 3], () => true)], [1, 2, 3])
   })
 })

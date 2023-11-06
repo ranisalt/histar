@@ -1,17 +1,18 @@
-import {describe, expect, it} from 'vitest'
+import assert from 'node:assert/strict'
+import {describe, it} from 'node:test'
 import {concat} from '../concat.mjs'
 
 describe('concat', () => {
   it('should shallow clone `array`', () => {
     const array = [1, 2, 3]
 
-    expect([...concat(array)]).toEqual(array)
+    assert.deepEqual([...concat(array)], array)
   })
 
   it('should concat arrays', () => {
     const array = [1]
 
-    expect([...concat(array, [3], [[4]])]).toEqual([1, 3, [4]])
+    assert.deepEqual([...concat(array, [3], [[4]])], [1, 3, [4]])
   })
 
   it('should treat sparse arrays as dense', () => {
@@ -19,8 +20,9 @@ describe('concat', () => {
 
     expected.push(undefined, undefined)
 
-    expect([
-      ...concat(Array.from({length: 1}), Array.from({length: 1})),
-    ]).toEqual(expected)
+    assert.deepEqual(
+      [...concat(Array.from({length: 1}), Array.from({length: 1}))],
+      expected,
+    )
   })
 })

@@ -1,9 +1,9 @@
-import {describe, expect, it} from 'vitest'
+import assert from 'node:assert/strict'
+import {describe, it} from 'node:test'
 import {count} from '../count.mjs'
 
 describe('count', () => {
   it('should count values by identity', () => {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    expect(count('AAAABBBCCDAABBB')).toEqual({A: 6, B: 6, C: 2, D: 1})
+    assert.deepEqual(count('AAAABBBCCDAABBB'), {A: 6, B: 6, C: 2, D: 1})
   })
 })

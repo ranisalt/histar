@@ -1,5 +1,4 @@
 import {flatMapDepth} from './flat-map-depth.mjs'
-import {map} from './map.mjs'
 
 /**
  * Creates a flattened iterable of values by running each element in `iterable`
