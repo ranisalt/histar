@@ -5,18 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
-  '@types/node':
-    specifier: ^20.8.10
-    version: 20.8.10
   '@vitest/coverage-v8':
     specifier: ^0.34.6
     version: 0.34.6(vitest@0.34.6)
   husky:
     specifier: ^8.0.3
     version: 8.0.3
-  typescript:
-    specifier: ^5.2.2
-    version: 5.2.2
   vitest:
     specifier: ^0.34.6
     version: 0.34.6

@@ -11,24 +11,18 @@
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.mts",
+  "module": "src/index.mjs",
   "files": [
-    "dist/*.d.mts",
-    "dist/*.mjs"
+    "src/*.mjs"
   ],
   "scripts": {
-    "build": "tsc -p .",
     "lint": "xo",
-    "prepack": "pnpm build",
     "prepare": "husky install",
     "test": "vitest"
   },
   "devDependencies": {
-    "@types/node": "^20.8.10",
     "@vitest/coverage-v8": "^0.34.6",
     "husky": "^8.0.3",
-    "typescript": "^5.2.2",
     "vitest": "^0.34.6",
     "xo": "^0.56.0"
   },
