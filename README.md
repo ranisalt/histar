@@ -20,7 +20,7 @@ Features
 Installation
 ------------
 
-You can install Histar using npm or yarn:
+You can install Histar using npm, yarn or pnpm:
 
 ```sh
 npm install histar
@@ -32,13 +32,19 @@ or
 yarn add histar
 ```
 
+or
+
+```sh
+pnpm install histar
+```
+
 Usage
 -----
 
 Here are a few examples of how to use Histar:
 
 ```js
-import { filter, map, reduce } from 'Histar';
+import { filter, map, reduce } from 'histar';
 
 const numbers = range(1, 6);
 

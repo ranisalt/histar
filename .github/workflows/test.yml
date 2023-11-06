@@ -6,26 +6,29 @@ jobs:
   test:
     strategy:
       matrix:
-        node-version: [14, 16, 18]
+        node-version: [18, 20]
 
     name: Test for node-${{ matrix.node-version }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
 
       - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          cache: yarn
+          cache: pnpm
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
 
       - name: Run tests
-        run: yarn test
+        run: pnpm test
 
       - name: Send coverage to Codecov
         uses: codecov/codecov-action@v3

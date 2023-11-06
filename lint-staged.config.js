@@ -1,3 +1,3 @@
 module.exports = {
-  '*.ts': ['yarn lint --fix'],
+  '*.ts': ['pnpm lint --fix'],
 }
