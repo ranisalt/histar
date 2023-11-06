@@ -1,18 +1,11 @@
 # Coverage directory used by tools like istanbul
-coverage
-*.lcov
+coverage/
 
 # Dependency directories
 node_modules/
 
-# TypeScript cache
-*.tsbuildinfo
-
 # Output of 'npm pack'
 *.tgz
-
-# TypeScript outDir
-dist/
 
 # Visual Studio Code
 .vscode/

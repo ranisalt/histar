@@ -29,6 +29,8 @@ jobs:
 
       - name: Run tests
         run: pnpm test
+        env:
+          NODE_V8_COVERAGE: coverage
 
       - name: Send coverage to Codecov
         uses: codecov/codecov-action@v3
