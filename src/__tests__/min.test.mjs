@@ -5,11 +5,11 @@ import {min} from '../min.mjs'
 const array = [1, 3, -4, 2]
 
 describe('min', () => {
-  it('min#should find the minimum value in a collection', () => {
+  it('should find the minimum value in a collection', () => {
     assert.equal(min(array), -4)
   })
 
-  it('min#should return undefined for empty arrays', () => {
+  it('should return undefined for empty arrays', () => {
     assert.equal(min([]), undefined)
   })
 })

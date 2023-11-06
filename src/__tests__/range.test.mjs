@@ -16,14 +16,16 @@ describe('range', () => {
     })
   })
 
-  it('should be an array-like object#should have a length property', () => {
-    assert.equal(range(10).length, 10)
-    assert.equal(range(10, 15).length, 5)
-    assert.equal(range(10, 20, 3).length, 4)
-  })
+  describe('should be an array-like object', () => {
+    it('should have a length property', () => {
+      assert.equal(range(10).length, 10)
+      assert.equal(range(10, 15).length, 5)
+      assert.equal(range(10, 20, 3).length, 4)
+    })
 
-  it('should be an array-like object#should work as a parameter to Array.from', () => {
-    assert.doesNotThrow(() => [...range(10)])
+    it('should work as a parameter to Array.from', () => {
+      assert.doesNotThrow(() => [...range(10)])
+    })
   })
 
   it('should adhere to the iterator protocol', () => {

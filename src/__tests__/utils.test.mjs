@@ -3,27 +3,27 @@ import assert from 'node:assert/strict'
 import {describe, it} from 'node:test'
 import {isArrayLike, isIterable} from '../utils.mjs'
 
-describe('utils', () => {
-  it('isArrayLike#should return true for arrays', () => {
+describe('isArrayLike', () => {
+  it('should return true for arrays', () => {
     assert(isArrayLike([1, 2, 3]))
   })
 
-  it('isArrayLike#should return true for strings', () => {
+  it('should return true for strings', () => {
     assert(isArrayLike('abc'))
   })
 
-  it('isArrayLike#should return true for arguments', function (_, ...args) {
+  it('should return true for arguments', function (_, ...args) {
     assert(isArrayLike(arguments))
     assert(isArrayLike(args))
   })
 
-  it('isArrayLike#should return false for objects with invalid length', () => {
+  it('should return false for objects with invalid length', () => {
     assert(!isArrayLike({length: 'abc'}))
     assert(!isArrayLike({length: -1}))
     assert(!isArrayLike({length: Number.MAX_SAFE_INTEGER + 1}))
   })
 
-  it('isArrayLike#should return false for non-array-like objects', () => {
+  it('should return false for non-array-like objects', () => {
     assert(!isArrayLike({}))
     assert(!isArrayLike(null))
     assert(!isArrayLike(undefined))
@@ -40,15 +40,17 @@ describe('utils', () => {
     assert(!isArrayLike(new WeakSet()))
     assert(!isArrayLike(new Promise(() => {})))
   })
+})
 
-  it('isIterable#should return true for array-like objects', function (_, ...args) {
+describe('isIterable', () => {
+  it('should return true for array-like objects', function (_, ...args) {
     assert(isIterable([1, 2, 3]))
     assert(isIterable('abc'))
     assert(isIterable(arguments))
     assert(isIterable(args))
   })
 
-  it('isIterable#should return true for generators', () => {
+  it('should return true for generators', () => {
     function* generator() {
       yield 1
     }
@@ -56,7 +58,7 @@ describe('utils', () => {
     assert(isIterable(generator()))
   })
 
-  it('isIterable#should return false for non-iterable objects', () => {
+  it('should return false for non-iterable objects', () => {
     assert(!isIterable({}))
     assert(!isIterable(null))
     assert(!isIterable(undefined))
