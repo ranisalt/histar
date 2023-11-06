@@ -28,9 +28,7 @@ jobs:
         run: pnpm install
 
       - name: Run tests
-        run: pnpm test
+        run: pnpm test -- --coverage.enabled --coverage.all --coverage.include=src/ --coverage.exclude=src/index.ts
 
       - name: Send coverage to Codecov
         uses: codecov/codecov-action@v3
-        with:
-          files: coverage/lcov.info

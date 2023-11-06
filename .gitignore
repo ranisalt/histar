@@ -12,7 +12,7 @@ node_modules/
 *.tgz
 
 # TypeScript outDir
-lib/
+dist/
 
 # Visual Studio Code
 .vscode/
