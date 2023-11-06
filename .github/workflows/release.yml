@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: pnpm
-          node-version: "*"
+          node-version: '*'
 
       - name: Install dependencies
         run: pnpm install
