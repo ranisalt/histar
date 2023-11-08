@@ -1,4 +1,3 @@
-// @ts-check
 import {filter} from './filter.mjs'
 import {map} from './map.mjs'
 import {times} from './times.mjs'
