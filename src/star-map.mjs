@@ -10,7 +10,7 @@ import {map} from './map.mjs'
  * @template U - The type of the elements returned by the predicate.
  * @param {Iterable<T[]>} iterable - The iterable to iterate over.
  * @param {StarMapPredicate<T, U>} predicate - The function invoked per iteration.
- * @yields Returns the new mapped iterable.
+ * @yields {U} Returns the new mapped iterable.
  * @see {@link map} {@link zip}
  * @example
  */

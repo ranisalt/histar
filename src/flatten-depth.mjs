@@ -7,6 +7,7 @@ import {isIterable} from './utils.mjs'
  * @param {Iterable<T | Iterable<T>>} iterable - The iterable to flatten.
  * @param {number} depth - The maximum recursion depth.
  * @yields {T} Returns the new flattened iterable.
+ * @returns {Generator<T, void, unknown>}
  * @see {@link flatMap}, {@link flatMapDeep}, {@link flatMapDepth}, {@link flattenDeep}
  * @example
  *

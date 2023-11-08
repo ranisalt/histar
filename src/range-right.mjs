@@ -9,7 +9,7 @@ import {range} from './range.mjs'
  *   `start`, and `start` is then set to `0`.
  * @param {number} [step] - The value to increment or decrement by. If `step` is not
  *   specified, it's set to `1` if `start` is less than `end`, otherwise `-1`.
- * @returns Returns the range of numbers.
+ * @returns {import('./range.mjs').Range} Returns the range of numbers.
  * @see {@link range}
  * @example
  *

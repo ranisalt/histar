@@ -1,12 +1,12 @@
 /**
  * Creates an iterable of values by running each element of `iterable` thru
- * `iteratee`. The iteratee is invoked with one argument: (value).
+ * `predicate`. The predicate is invoked with one argument: (value).
  *
  * @template T - The type of the elements in the iterable.
  * @template U - The type of the elements in the returned iterable.
  * @param {Iterable<T>} iterable - The iterable to iterate over.
  * @param {import("./types.mjs").UnaryPredicate<T, U>} predicate - The function invoked per iteration.
- * @yields Returns the new mapped iterable.
+ * @yields {U} Returns the new mapped iterable.
  * @example
  *
  * const square = (n) => n * n

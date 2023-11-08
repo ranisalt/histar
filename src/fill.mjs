@@ -8,7 +8,7 @@
  * @param {U} value - The value to fill `iterable` with.
  * @param {number} [start] - The start position.
  * @param {number} [end] - The end position.
- * @yields Returns the filled iterable.
+ * @yields {T | U} Returns the filled iterable.
  * @example
  *
  * [...fill([1, 2, 3], 'a')]

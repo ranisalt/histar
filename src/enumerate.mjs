@@ -7,7 +7,7 @@ import {zip} from './zip.mjs'
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T>} iterable - The iterable to enumerate.
  * @param {number} [start] - The number to start from.
- * @yields Returns an iterable of tuples, where the first element is the index
+ * @yields {[number, T]} Returns an iterable of tuples, where the first element is the index
  *   and the second element is the value.
  * @see {@link range}
  * @example

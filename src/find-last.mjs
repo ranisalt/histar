@@ -5,7 +5,7 @@
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T>} iterable - The iterable to inspect.
  * @param {import("./find.mjs").FindPredicate<T>} predicate - The function invoked per iteration.
- * @returns Returns the matched element, else `undefined`.
+ * @returns {T | undefined} Returns the matched element, else `undefined`.
  * @see {@link find}, {@link findIndex}, {@link findLastIndex}
  * @example
  *

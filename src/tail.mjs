@@ -5,7 +5,7 @@ import {drop} from './drop.mjs'
  *
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T>} iterable - The iterable to query.
- * @yields Returns the slice of `iterable`.
+ * @yields {T} Returns the slice of `iterable`.
  * @example
  *
  * [...tail([1, 2, 3])]

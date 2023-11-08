@@ -9,7 +9,7 @@ import {zipWith} from './zip-with.mjs'
  * @template U - The type of the elements in the second iterable.
  * @param {Iterable<T>} iterable1 - First array to process.
  * @param {Iterable<U>} iterable2 - Second array to process.
- * @yields Returns the new array of grouped elements.
+ * @yields {[T, U]} Returns the new array of grouped elements.
  * @see {@link zipWith}
  * @example
  *

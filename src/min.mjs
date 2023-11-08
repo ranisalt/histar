@@ -5,7 +5,7 @@ import {minBy} from './min-by.mjs'
  *
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T>} iterable - The iterable to iterate over.
- * @returns Returns the minimum value.
+ * @returns {T | undefined} Returns the minimum value.
  * @example
  *
  * min([4, 2, 8, 6])

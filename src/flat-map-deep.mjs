@@ -6,9 +6,9 @@ import {flatMapDepth} from './flat-map-depth.mjs'
  *
  * @template T - The type of the elements in the iterable.
  * @template U - The type of the elements in the result iterable.
- * @param {Iterable<T>} collection - The collection to iterate over.
- * @param {import('./flat-map-depth.mjs').FlatMapDepthIteratee<T, U>} iteratee - The function invoked per iteration.
- * @yields Returns the new flattened iterable.
+ * @param {Iterable<T>} iterable - The collection to iterate over.
+ * @param {import('./types.mjs').UnaryPredicate<T, U>} predicate - The function invoked per iteration.
+ * @yields {U} Returns the new flattened iterable.
  * @see {@link flatMap}, {@link flatMapDepth}, {@link flatten}, {@link flattenDeep}, {@link flattenDepth}, {@link map}
  * @example
  *

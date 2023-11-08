@@ -12,7 +12,7 @@ describe('initial', () => {
     assert.deepEqual([...initial([])], [])
   })
 
-  it('should work as an iteratee for methods like `map`', () => {
+  it('should work as an predicate for methods like `map`', () => {
     const array = [
       [1, 2, 3],
       [4, 5, 6],

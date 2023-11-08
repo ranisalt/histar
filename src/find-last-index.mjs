@@ -5,7 +5,7 @@
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T>} iterable - The iterable to inspect.
  * @param {import("./types.mjs").UnaryPredicate<T, boolean>} predicate - The function invoked per iteration.
- * @returns Returns the index of the found element, else `-1`.
+ * @returns {number} Returns the index of the found element, else `-1`.
  * @see {@link find}, {@link findIndex}, {@link findLast}
  * @example
  *

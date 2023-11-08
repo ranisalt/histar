@@ -16,7 +16,7 @@ describe('reduce', () => {
     assert(reduce([], (x) => x) === undefined)
   })
 
-  it('should provide correct `iteratee` arguments when iterating an array', () => {
+  it('should provide correct `predicate` arguments when iterating an array', () => {
     let args
 
     reduce(

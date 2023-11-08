@@ -6,7 +6,7 @@ import {indexOf} from './index-of.mjs'
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T>} iterable - The iterable to inspect.
  * @param {T} value - The value to search for.
- * @returns Returns `true` if `value` is found, else `false`.
+ * @returns {boolean} Returns `true` if `value` is found, else `false`.
  * @example
  *
  * includes([1, 2, 3], 1)

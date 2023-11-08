@@ -7,7 +7,7 @@ import {filter} from './filter.mjs'
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T>} iterable - to iterate over.
  * @param {import('./filter.mjs').BooleanFilterPredicate<T>} function - invoked per iteration.
- * @yields Returns the new filtered iterable.
+ * @yields {T} Returns the new filtered iterable.
  * @example
  *
  * const users = [

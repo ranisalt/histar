@@ -5,7 +5,7 @@
  *
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T>} iterable - The iterable to cycle through.
- * @yields Returns the new iterator.
+ * @yields {T} Returns the new iterator.
  * @example
  *
  * [...cycle([1, 2, 3])]

@@ -6,7 +6,7 @@ import {takeWhile} from './take-while.mjs'
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T>} iterable - The iterable to query.
  * @param {number} n - The number of elements to take.
- * @yields Returns the slice of `iterable`.
+ * @yields {T} Returns the slice of `iterable`.
  * @example
  *
  * [...take([1, 2, 3])]

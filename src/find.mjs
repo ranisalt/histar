@@ -5,7 +5,7 @@
  * @template T - The type of the elements in the iterable.
  * @param {Iterator<T>} iterator - The iterator to query.
  * @param {import("./types.mjs").UnaryPredicate<T, boolean>} predicate - The function invoked per iteration.
- * @returns Returns the matched element, else `undefined`.
+ * @returns {T | undefined} Returns the matched element, else `undefined`.
  */
 export function find(iterator, predicate) {
   let result = iterator.next()

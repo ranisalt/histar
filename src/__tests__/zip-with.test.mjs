@@ -3,14 +3,14 @@ import {describe, it} from 'node:test'
 import {zipWith} from '../zip-with.mjs'
 
 describe('zipWith', () => {
-  it('should zip arrays combining grouped elements with `iteratee`', () => {
+  it('should zip arrays combining grouped elements with `predicate`', () => {
     const array1 = [1, 2, 3]
     const array2 = [4, 5, 6]
 
     assert.deepEqual([...zipWith(array1, array2, (a, b) => a + b)], [5, 7, 9])
   })
 
-  it('should provide correct `iteratee` arguments', () => {
+  it('should provide correct `predicate` arguments', () => {
     let args
 
       // eslint-disable-next-line no-unused-expressions

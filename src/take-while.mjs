@@ -6,7 +6,7 @@
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T>} iterable - The iterable to query.
  * @param {import("./types.mjs").UnaryPredicate<T, boolean>} predicate - The function invoked per iteration.
- * @yields Returns the slice of `iterable`.
+ * @yields {T} Returns the slice of `iterable`.
  * @example
  *
  * const users = [

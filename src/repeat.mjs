@@ -6,7 +6,7 @@ import {times} from './times.mjs'
  * @template T - The type of the elements in the iterable.
  * @param {T} element The element to repeat.
  * @param {number} [n] The number of times to repeat the element.
- * @yields Returns the iterable of repeated elements.
+ * @yields {T} Returns the iterable of repeated elements.
  * @example
  *
  * [...repeat('a', 3)]

@@ -10,7 +10,7 @@ import {map} from './map.mjs'
  * @param {Iterable<T>} iterable - The collection to iterate over.
  * @param {import('./types.mjs').UnaryPredicate<T, U>} predicate - The function invoked per iteration.
  * @param {number} depth - The maximum recursion depth.
- * @yields Returns the new flattened iterable.
+ * @yields {T} Returns the new flattened iterable.
  * @see {@link flatMap}, {@link flatMapDeep}, {@link flatten}, {@link flattenDeep}, {@link flattenDepth}, {@link map}
  * @example
  *

@@ -8,7 +8,7 @@ import {indexOf} from './index-of.mjs'
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T>} iterable - The iterable to inspect.
  * @param {T[]} values - The values to exclude.
- * @yields Returns the new iterable of filtered values.
+ * @yields {T} Returns the new iterable of filtered values.
  * @example
  *
  * [...without([2, 1, 2, 3], 1, 2)]

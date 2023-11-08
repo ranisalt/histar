@@ -11,7 +11,7 @@
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T>} iterable - The iterable to iterate over.
  * @param {import("./types.mjs").UnaryPredicate<T, boolean>} predicate - The function invoked per iteration.
- * @returns Returns `true` if all elements pass the predicate check,
+ * @returns {boolean} Returns `true` if all elements pass the predicate check,
  *   else `false`.
  * @example
  *

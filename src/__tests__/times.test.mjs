@@ -3,7 +3,7 @@ import {describe, it} from 'node:test'
 import {times} from '../times.mjs'
 
 describe('times', () => {
-  it('should provide correct `iteratee` arguments', () => {
+  it('should provide correct `predicate` arguments', () => {
     let args
 
       // eslint-disable-next-line no-unused-expressions
@@ -16,7 +16,7 @@ describe('times', () => {
     assert.deepEqual(args, [0])
   })
 
-  it('should return an array of the results of each `iteratee` execution', () => {
+  it('should return an array of the results of each `predicate` execution', () => {
     assert.deepEqual([...times(3, (x) => x * 2)], [0, 2, 4])
   })
 
