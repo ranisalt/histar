@@ -1,5 +1,6 @@
 export {any, some} from './some.mjs'
 export {chunk} from './chunk.mjs'
+export {chunkBy} from './chunk-by.mjs'
 export {compact} from './compact.mjs'
 export {compress} from './compress.mjs'
 export {concat} from './concat.mjs'

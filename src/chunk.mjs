@@ -1,6 +1,4 @@
-import {filter} from './filter.mjs'
-import {map} from './map.mjs'
-import {times} from './times.mjs'
+import {chunkBy} from './chunk-by.mjs'
 
 /**
  * Creates an iterable of elements split into groups the length of `size`. If
@@ -19,25 +17,7 @@ import {times} from './times.mjs'
  * [...chunk(['a', 'b', 'c', 'd'], 3)]
  * // => [['a', 'b', 'c'], ['d']]
  */
-export function* chunk(iterable, size) {
-  const iterator = iterable[Symbol.iterator]()
-
-  let result = iterator.next()
-  while (!result.done) {
-    // FIXME: yield generators instead of arrays
-    yield [
-      ...map(
-        filter(
-          times(size, () => {
-            const previousResult = result
-            result = iterator.next()
-            return previousResult
-          }),
-          (result) => !result.done,
-        ),
-        /** @returns {T} */
-        ({value}) => value,
-      ),
-    ]
-  }
+export function chunk(iterable, size) {
+  let i = 0
+  return chunkBy(iterable, () => Math.floor(i++ / size))
 }
