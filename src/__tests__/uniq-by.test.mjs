@@ -7,7 +7,7 @@ import {times} from '../times.mjs'
 describe('uniqBy', () => {
   const objects = [{a: 2}, {a: 3}, {a: 1}, {a: 2}, {a: 3}, {a: 1}]
 
-  it('should work with an predicate', () => {
+  it('should work with a predicate', () => {
     assert.deepEqual([...uniqBy(objects, ({a}) => a)], [...take(objects, 3)])
   })
 

@@ -1,8 +1,10 @@
+import {generate} from './generate.mjs'
+
 /**
  * Gets all but the last element of `iterable`.
  *
  * @template T The type of the elements in the iterable.
- * @param {Iterable<T>} iterable - The iterable to query.
+ * @param {Iterable<T>} iterable The iterable to query.
  * @yields {T} Returns the slice of `iterable`.
  * @example
  *
@@ -10,7 +12,7 @@
  * // => [1, 2]
  */
 export function* initial(iterable) {
-  const iterator = iterable[Symbol.iterator]()
+  const iterator = generate(iterable)
 
   let previousResult = iterator.next()
   if (previousResult.done) {

@@ -1,8 +1,10 @@
+import {generate} from './generate.mjs'
+
 /**
  * Gets the first element of `iterable`.
  *
- * @template T - The type of the elements in the iterable.
- * @param {Iterable<T>} iterable - The iterable to query.
+ * @template T The type of the elements in the iterable.
+ * @param {Iterable<T>} iterable The iterable to query.
  * @returns {T | undefined} Returns the first element of `iterable`.
  * @see {@link last}
  * @example
@@ -14,7 +16,7 @@
  * // => undefined
  */
 export function head(iterable) {
-  return iterable[Symbol.iterator]().next().value
+  return generate(iterable).next().value
 }
 
 export const first = head

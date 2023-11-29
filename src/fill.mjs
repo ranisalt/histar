@@ -1,13 +1,15 @@
+import {generate} from './generate.mjs'
+
 /**
  * Fills elements of `iterable` with `value` from `start` up to, but not
  * including, `end`.
  *
- * @template T - The type of the elements in the iterable.
- * @template U - The type of the value to fill the iterable with.
- * @param {Iterable<T>} iterable - The iterable to fill.
- * @param {U} value - The value to fill `iterable` with.
- * @param {number} [start] - The start position.
- * @param {number} [end] - The end position.
+ * @template T The type of the elements in the iterable.
+ * @template U The type of the value to fill the iterable with.
+ * @param {Iterable<T>} iterable The iterable to fill.
+ * @param {U} value The value to fill `iterable` with.
+ * @param {number} [start] The start position.
+ * @param {number} [end] The end position.
  * @yields {T | U} Returns the filled iterable.
  * @example
  *
@@ -26,7 +28,7 @@ export function* fill(
   start = 0,
   end = Number.MAX_SAFE_INTEGER,
 ) {
-  const iterator = iterable[Symbol.iterator]()
+  const iterator = generate(iterable)
 
   let result = iterator.next()
   for (let i = 0; i < start && !result.done; ++i) {

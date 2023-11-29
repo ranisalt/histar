@@ -1,14 +1,16 @@
+import {generate} from './generate.mjs'
+
 /**
  * This method is like `zip` except that it accepts `predicate` to specify how
  * grouped values should be combined. The predicate is invoked with the elements
  * of each group: (...group).
  *
- * @template T - The type of the elements in the first iterable.
- * @template U - The type of the elements in the second iterable.
- * @template V - The type of the elements in the result iterable.
- * @param {Iterable<T>} iterable1 - First array to process.
- * @param {Iterable<U>} iterable2 - Second array to process.
- * @param {ZipWithPredicate<T, U, V>} predicate - The function to combine grouped values.
+ * @template T The type of the elements in the first iterable.
+ * @template U The type of the elements in the second iterable.
+ * @template V The type of the elements in the result iterable.
+ * @param {Iterable<T>} iterable1 First array to process.
+ * @param {Iterable<U>} iterable2 Second array to process.
+ * @param {ZipWithPredicate<T, U, V>} predicate The function to combine grouped values.
  * @yields {V} Returns the new array of grouped elements.
  * @see {@link zip}
  * @example
@@ -17,8 +19,8 @@
  * // => [11, 22]
  */
 export function* zipWith(iterable1, iterable2, predicate) {
-  const iterator1 = iterable1[Symbol.iterator]()
-  const iterator2 = iterable2[Symbol.iterator]()
+  const iterator1 = generate(iterable1)
+  const iterator2 = generate(iterable2)
 
   let result1 = iterator1.next()
   let result2 = iterator2.next()
@@ -31,7 +33,7 @@ export function* zipWith(iterable1, iterable2, predicate) {
 }
 
 /**
- * @template T - The type of the elements in the first iterable.
+ * @template T The type of the elements in the first iterable.
  * @template U - The type of the elements in the second iterable.
  * @template V - The type of the elements in the result iterable.
  * @callback ZipWithPredicate

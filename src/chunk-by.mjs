@@ -1,9 +1,11 @@
+import {generate} from './generate.mjs'
+
 /**
  * Creates an iterable of elements split into groups for which `predicate`
  * returns the same value.
  *
- * @template T
- * @template U
+ * @template T The type of the elements in the iterable.
+ * @template U The type of the return value of `predicate`.
  * @param {Iterable<T>} iterable The iterable to process.
  * @param {import('./types.mjs').UnaryPredicate<T, U>} predicate The function invoked per iteration.
  * @yields {T[]} Returns the new iterable of chunks.
@@ -13,7 +15,7 @@
  * // => [[1.2], [2.1, 2.3], [3.4]]
  */
 export function* chunkBy(iterable, predicate) {
-  const iterator = iterable[Symbol.iterator]()
+  const iterator = generate(iterable)
 
   let result = iterator.next()
   if (result.done) {

@@ -1,3 +1,5 @@
+import {generate} from './generate.mjs'
+
 /**
  * Reduces `iterable` to a value which is the accumulated result of running
  * each element in `iterable` thru `predicate`, where each successive
@@ -5,11 +7,11 @@
  * is not given, the first element of `iterable` is used as the initial value.
  * The predicate is invoked with two arguments: (accumulator, value).
  *
- * @template T - The type of the elements in the iterable.
- * @template Result - The type of the accumulated value.
- * @param {Iterable<T>} iterable - The iterable to iterate over.
- * @param {import("./types.mjs").UnaryPredicate<T, Result>} predicate - The function invoked per iteration.
- * @param {Result} [initialValue] - The initial value.
+ * @template T The type of the elements in the iterable.
+ * @template Result The type of the accumulated value.
+ * @param {Iterable<T>} iterable The iterable to iterate over.
+ * @param {import("./types.mjs").UnaryPredicate<T, Result>} predicate The function invoked per iteration.
+ * @param {Result} [initialValue] The initial value.
  * @returns {Result} Returns the accumulated value.
  * @example
  *
@@ -23,7 +25,7 @@
  * // => { '1': ['a', 'c'], '2': ['b'] } (iteration order is not guaranteed)
  */
 export function reduce(iterable, predicate, initialValue) {
-  const iterator = iterable[Symbol.iterator]()
+  const iterator = generate(iterable)
 
   let result = iterator.next()
   if (result.done) {

@@ -3,10 +3,10 @@
  * occurrence of each element is kept. The order of result values is determined
  * by the order they occur in the iterable.
  *
- * @template T - The type of the elements in the iterable.
- * @template Key - The type of the key returned by the predicate.
- * @param {Iterable<T>} iterable - The iterable to process.
- * @param {import("./types.mjs").UnaryPredicate<T, Key>} predicate - The function invoked per iteration.
+ * @template T The type of the elements in the iterable.
+ * @template Key The type of the key returned by the predicate.
+ * @param {Iterable<T>} iterable The iterable to process.
+ * @param {import("./types.mjs").UnaryPredicate<T, Key>} predicate The function invoked per iteration.
  * @yields {T} Returns the new iterable of unique elements.
  * @example
  *

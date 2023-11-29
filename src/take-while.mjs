@@ -3,9 +3,9 @@
  * Elements are taken until `predicate` returns falsey. The predicate is invoked
  * with one arguments: (value).
  *
- * @template T - The type of the elements in the iterable.
- * @param {Iterable<T>} iterable - The iterable to query.
- * @param {import("./types.mjs").UnaryPredicate<T, boolean>} predicate - The function invoked per iteration.
+ * @template T The type of the elements in the iterable.
+ * @param {Iterable<T>} iterable The iterable to query.
+ * @param {import("./types.mjs").UnaryPredicate<T, boolean>} predicate The function invoked per iteration.
  * @yields {T} Returns the slice of `iterable`.
  * @example
  *
@@ -22,11 +22,11 @@
  * ]
  */
 export function* takeWhile(iterable, predicate) {
-  const iterator = iterable[Symbol.iterator]()
+  for (const value of iterable) {
+    if (!predicate(value)) {
+      break
+    }
 
-  let result = iterator.next()
-  while (!result.done && predicate(result.value)) {
-    yield result.value
-    result = iterator.next()
+    yield value
   }
 }
