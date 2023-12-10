@@ -15,7 +15,9 @@
   "module": "src/index.mjs",
   "types": "src/index.d.ts",
   "files": [
-    "src/*.mjs"
+    "src/*.mjs",
+    "src/*.d.mts",
+    "src/*.d.mts.map"
   ],
   "scripts": {
     "lint": "xo",
