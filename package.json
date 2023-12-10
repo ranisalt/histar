@@ -1,6 +1,6 @@
 {
   "name": "histar",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Histar is a lightweight JavaScript utility library for working with iterables",
   "homepage": "https://github.com/ranisalt/histar#readme",
   "bugs": "https://github.com/ranisalt/histar/issues",
