@@ -3,8 +3,8 @@ import {countBy} from './count-by.mjs'
 /**
  * Creates an iterator that groups consecutive elements of the given iterable.
  *
- * @template T - The type of the elements in the iterable.
- * @param {Iterable<T>} iterable - The iterable to group.
+ * @template {string | number | symbol} T The type of the elements in the iterable.
+ * @param {Iterable<T>} iterable The iterable to group.
  * @returns {Record<T, number>} Returns each element of the iterable with the number of consecutive
  *   elements that are equal to it.
  * @example

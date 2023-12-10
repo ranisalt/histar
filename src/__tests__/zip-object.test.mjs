@@ -14,8 +14,4 @@ describe('zipObject', () => {
   it('should ignore extra `values`', () => {
     assert.deepEqual(zipObject(['a'], range(1, 3)), {a: 1})
   })
-
-  it('should assign `undefined` values for extra `keys`', () => {
-    assert.deepEqual(zipObject(['a', 'b'], range(1, 2)), {a: 1, b: undefined})
-  })
 })

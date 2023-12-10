@@ -9,7 +9,16 @@
 /**
  * @template T
  * @template U
+ * @callback Reducer
+ * @param {T} accumulator The current element.
+ * @param {U} value The index of the current element.
+ * @returns {T}
+ */
+
+/**
+ * @template T
+ * @template {T} U extends U
  * @callback NarrowingPredicate
  * @param {T} element The current element.
- * @returns {asserts element is U}
+ * @returns {element is U}
  */

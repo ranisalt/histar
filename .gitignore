@@ -9,3 +9,7 @@ node_modules/
 
 # Visual Studio Code
 .vscode/
+
+# Typescript declaration files
+*.d.mts
+*.d.mts.map

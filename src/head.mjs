@@ -16,7 +16,8 @@ import {generate} from './generate.mjs'
  * // => undefined
  */
 export function head(iterable) {
-  return generate(iterable).next().value
+  const {value = undefined} = generate(iterable).next()
+  return value
 }
 
 export const first = head

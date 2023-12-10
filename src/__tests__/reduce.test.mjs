@@ -5,15 +5,10 @@ import {reduce} from '../reduce.mjs'
 const array = [1, 2, 3]
 
 describe('reduce', () => {
-  it('should use the first element of a collection as the default `accumulator`', () => {
-    assert.equal(
-      reduce(array, (x) => x),
-      1,
-    )
-  })
-
   it('should return initial value for empty arrays', () => {
-    assert(reduce([], (x) => x) === undefined)
+    assert(
+      reduce(/** @type {number[]} */ ([]), (x) => x, undefined) === undefined,
+    )
   })
 
   it('should provide correct `predicate` arguments when iterating an array', () => {
@@ -29,13 +24,5 @@ describe('reduce', () => {
     )
 
     assert.deepEqual(args, [0, 1])
-
-    args = undefined
-    reduce(array, (...iterArgs) => {
-      args ||= iterArgs
-      return iterArgs[0]
-    })
-
-    assert.deepEqual(args, [1, 2])
   })
 })

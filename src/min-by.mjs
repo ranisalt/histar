@@ -1,3 +1,4 @@
+import {generate} from './generate.mjs'
 import {reduce} from './reduce.mjs'
 
 /**
@@ -18,7 +19,17 @@ import {reduce} from './reduce.mjs'
  * // => { 'n': 1 }
  */
 export function minBy(iterable, predicate) {
-  return reduce(iterable, (accumulator, value) =>
-    predicate(accumulator) > predicate(value) ? value : accumulator,
+  const iterator = generate(iterable)
+
+  const first = iterator.next()
+  if (first.done) {
+    return undefined
+  }
+
+  return reduce(
+    iterator,
+    (accumulator, value) =>
+      predicate(accumulator) > predicate(value) ? value : accumulator,
+    first.value,
   )
 }

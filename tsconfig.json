@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "es2019",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "allowJs": true,
+      "checkJs": true,
+      "declaration": true,
+      "declarationMap": true,
+      "strict": true
+    },
+    "files": ["src/index.mjs"]
+  }

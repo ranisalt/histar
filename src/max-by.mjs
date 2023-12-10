@@ -1,3 +1,4 @@
+import {generate} from './generate.mjs'
 import {reduce} from './reduce.mjs'
 
 /**
@@ -5,10 +6,10 @@ import {reduce} from './reduce.mjs'
  * for each element in `predicate` to generate the criterion by which the value
  * is ranked. The predicate is invoked with one argument: (value).
  *
- * @template T - The type of the elements in the iterable.
- * @template U - The type of the elements returned by the predicate.
- * @param {T} iterable - The iterable to iterate over.
- * @param {import('./types.mjs').UnaryPredicate<T, U>} predicate - The predicate invoked per element.
+ * @template T The type of the elements in the iterable.
+ * @template U The type of the elements returned by the predicate.
+ * @param {Iterable<T>} iterable The iterable to iterate over.
+ * @param {import('./types.mjs').UnaryPredicate<T, U>} predicate The predicate invoked per element.
  * @returns {T | undefined} Returns the maximum value.
  * @example
  *
@@ -18,7 +19,17 @@ import {reduce} from './reduce.mjs'
  * // => { 'n': 2 }
  */
 export function maxBy(iterable, predicate) {
-  return reduce(iterable, (accumulator, value) =>
-    predicate(accumulator) < predicate(value) ? value : accumulator,
+  const iterator = generate(iterable)
+
+  const first = iterator.next()
+  if (first.done) {
+    return undefined
+  }
+
+  return reduce(
+    iterable,
+    (accumulator, value) =>
+      predicate(accumulator) < predicate(value) ? value : accumulator,
+    first.value,
   )
 }

@@ -5,9 +5,10 @@ import {generate} from './generate.mjs'
  * returns truthy for. The predicate is invoked with one argument: (value).
  *
  * @template T The type of the elements in the iterable.
+ * @template {T} U The type of the element returned by `predicate`.
  * @param {Iterable<T>} iterable The iterable to query.
- * @param {import("./types.mjs").UnaryPredicate<T, boolean>} predicate The function invoked per iteration.
- * @returns {T | undefined} Returns the matched element, else `undefined`.
+ * @param {import("./types.mjs").NarrowingPredicate<T, U>} predicate The function invoked per iteration.
+ * @returns {U | undefined} Returns the matched element, else `undefined`.
  */
 export function find(iterable, predicate) {
   const iterator = generate(iterable)

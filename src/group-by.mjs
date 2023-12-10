@@ -10,7 +10,7 @@ import {generate} from './generate.mjs'
  * @param {import("./types.mjs").UnaryPredicate<T, U>} predicate The function to compute the key value for each element.
  * @yields {[U, T[]]} Returns each element of the iterable with the number of consecutive
  *   elements that are equal to it.
- * @returns {Generator<[U, T[]], void, unknown>}
+ * @returns {IterableIterator<[U, T[]]>}
  * @example
  *
  * [...groupBy([1, 1, 2, 2, 3, 3, 3, 4, 4, 5], (x) => x < 3)]

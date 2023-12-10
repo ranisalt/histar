@@ -2,10 +2,11 @@
  * This method is like `find` except that it iterates over elements of
  * `iterable` from right to left.
  *
- * @template T - The type of the elements in the iterable.
- * @param {Iterable<T>} iterable - The iterable to inspect.
- * @param {import("./find.mjs").FindPredicate<T>} predicate - The function invoked per iteration.
- * @returns {T | undefined} Returns the matched element, else `undefined`.
+ * @template T The type of the elements in the iterable.
+ * @template {T} U The type of the element returned by `predicate`.
+ * @param {Iterable<T>} iterable The iterable to inspect.
+ * @param {import("./types.mjs").NarrowingPredicate<T, U>} predicate The function invoked per iteration.
+ * @returns {U | undefined} Returns the matched element, else `undefined`.
  * @see {@link find}, {@link findIndex}, {@link findLastIndex}
  * @example
  *

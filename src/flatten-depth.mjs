@@ -1,4 +1,4 @@
-import {isIterable} from './utils.mjs'
+import {assertIterable} from './utils.mjs'
 
 /**
  * Recursively flatten `iterable` up to `depth` times.
@@ -6,8 +6,8 @@ import {isIterable} from './utils.mjs'
  * @template T - The type of the elements in the iterable.
  * @param {Iterable<T | Iterable<T>>} iterable - The iterable to flatten.
  * @param {number} depth - The maximum recursion depth.
- * @yields {T} Returns the new flattened iterable.
- * @returns {Generator<T, void, unknown>}
+ * @yields {T | Iterable<T>} Returns the new flattened iterable.
+ * @returns {Generator<T | Iterable<T>, void, unknown>}
  * @see {@link flatMap}, {@link flatMapDeep}, {@link flatMapDepth}, {@link flattenDeep}
  * @example
  *
@@ -21,9 +21,15 @@ import {isIterable} from './utils.mjs'
  */
 export function* flattenDepth(iterable, depth) {
   for (const it of iterable) {
-    if (isIterable(it) && depth > 0) {
-      yield* flattenDepth(it, depth - 1)
-    } else {
+    try {
+      assertIterable(it)
+
+      if (depth > 0) {
+        yield* flattenDepth(it, depth - 1)
+      } else {
+        yield it
+      }
+    } catch {
       yield it
     }
   }

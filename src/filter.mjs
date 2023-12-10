@@ -1,5 +1,5 @@
 /**
- * @template T - The type of the elements in the iterable.
+ * @template T The type of the elements in the iterable.
  * @overload
  * @param {Iterable<T>} iterable
  * @param {import("./types.mjs").UnaryPredicate<T, boolean>} predicate
@@ -8,11 +8,11 @@
  */
 
 /**
- * @template T - The type of the elements in the iterable.
- * @template S - The type of the elements in the returned iterable.
+ * @template T The type of the elements in the iterable.
+ * @template {T} S The type of the elements in the returned iterable.
  * @overload
- * @param {Iterable<T>} iterable - The iterable to iterate over.
- * @param {import("./types.mjs").NarrowingPredicate<T, S>} predicate - The function invoked per iteration.
+ * @param {Iterable<T>} iterable The iterable to iterate over.
+ * @param {import("./types.mjs").NarrowingPredicate<T, S>} predicate The function invoked per iteration.
  * @returns {Generator<S, void, unknown>}
  * @yields {S} Returns the new filtered iterable.
  */
@@ -22,11 +22,11 @@
  * `predicate` returns truthy for. The predicate is invoked with one argument:
  * (value).
  *
- * @template T - The type of the elements in the iterable.
- * @template S - The type of the elements in the returned iterable.
- * @param {Iterable<T>} iterable - The iterable to iterate over.
- * @param {import("./types.mjs").UnaryPredicate<T, boolean> | import("./types.mjs").NarrowingPredicate<T, S>} predicate - The function invoked per iteration.
- * @yields {T & S} Returns the new filtered iterable.
+ * @template T The type of the elements in the iterable.
+ * @template {T} S The type of the elements in the returned iterable.
+ * @param {Iterable<T>} iterable The iterable to iterate over.
+ * @param {import("./types.mjs").UnaryPredicate<T, boolean> | import("./types.mjs").NarrowingPredicate<T, S>} predicate The function invoked per iteration.
+ * @yields {S} Returns the new filtered iterable.
  *
  * @see {@link reject}
  *

@@ -10,11 +10,10 @@ import {generate} from './generate.mjs'
  * @template T The type of the elements in the iterable.
  * @template Result The type of the accumulated value.
  * @param {Iterable<T>} iterable The iterable to iterate over.
- * @param {import("./types.mjs").UnaryPredicate<T, Result>} predicate The function invoked per iteration.
- * @param {Result} [initialValue] The initial value.
+ * @param {import("./types.mjs").Reducer<Result, T>} predicate The function invoked per iteration.
+ * @param {Result} initialValue The initial value.
  * @returns {Result} Returns the accumulated value.
  * @example
- *
  * reduce([1, 2], (sum, n) => sum + n, 0)
  * // => 3
  *
@@ -30,11 +29,6 @@ export function reduce(iterable, predicate, initialValue) {
   let result = iterator.next()
   if (result.done) {
     return initialValue
-  }
-
-  if (initialValue === undefined) {
-    initialValue = result.value
-    result = iterator.next()
   }
 
   while (!result.done) {

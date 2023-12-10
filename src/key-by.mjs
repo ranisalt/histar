@@ -5,15 +5,15 @@
  * is invoked with one argument: (value).
  *
  * @template T
- * @template U
+ * @template {string | number | symbol} U
  * @param {Iterable<T>} iterable The iterable to iterate over.
  * @param {import("./types.mjs").UnaryPredicate<T, U>} predicate The function invoked per iteration.
  * @returns {Record<U, T>} Returns the composed aggregate object.
  * @see {@link groupBy}
  */
 export function keyBy(iterable, predicate) {
-  /** @type {Record<U, T>} */
-  const result = {}
+  const result = /** @type {Record<U, T>} */ ({})
+
   for (const item of iterable) {
     result[predicate(item)] = item
   }

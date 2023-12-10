@@ -1,13 +1,12 @@
-import {concat} from './concat.mjs'
-import {repeat} from './repeat.mjs'
+import {reduce} from './reduce.mjs'
 import {zip} from './zip.mjs'
 
 /**
  * Creates an object composed from arrays of keys and values. Provide two
  * iterables, one of property identifiers and one of corresponding values.
  *
- * @template T - The type of the keys in the record.
- * @template U - The type of the values in the record.
+ * @template {string | number | symbol} T The type of the keys in the record.
+ * @template U The type of the values in the record.
  * @param {Iterable<T>} keys
  * @param {Iterable<U>} values
  * @returns {Record<T, U>}
@@ -16,5 +15,12 @@ import {zip} from './zip.mjs'
  * // => { 'a': 1, 'b': 2 }
  */
 export function zipObject(keys, values) {
-  return Object.fromEntries(zip(keys, concat(values, repeat(undefined))))
+  return reduce(
+    zip(keys, values),
+    (accumulator, [key, value]) => {
+      accumulator[key] = value
+      return accumulator
+    },
+    /** @type {Record<T, U>} */ ({}),
+  )
 }

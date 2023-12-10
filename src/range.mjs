@@ -103,7 +103,9 @@ export function range(start, end, step) {
           }
         }
 
-        return target[name]
+        if (name in target) {
+          return target[/** @type {keyof typeof target} */ (name)]
+        }
       },
     },
   )

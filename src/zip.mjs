@@ -5,10 +5,10 @@ import {zipWith} from './zip-with.mjs'
  * elements of the given arrays, the second of which contains the second
  * elements of the given arrays, and so on.
  *
- * @template T - The type of the elements in the first iterable.
- * @template U - The type of the elements in the second iterable.
- * @param {Iterable<T>} iterable1 - First array to process.
- * @param {Iterable<U>} iterable2 - Second array to process.
+ * @template T The type of the elements in the first iterable.
+ * @template U The type of the elements in the second iterable.
+ * @param {Iterable<T>} iterable1 First array to process.
+ * @param {Iterable<U>} iterable2 Second array to process.
  * @yields {[T, U]} Returns the new array of grouped elements.
  * @see {@link zipWith}
  * @example

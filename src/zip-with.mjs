@@ -34,10 +34,10 @@ export function* zipWith(iterable1, iterable2, predicate) {
 
 /**
  * @template T The type of the elements in the first iterable.
- * @template U - The type of the elements in the second iterable.
- * @template V - The type of the elements in the result iterable.
+ * @template U The type of the elements in the second iterable.
+ * @template V The type of the elements in the result iterable.
  * @callback ZipWithPredicate
- * @param {T} a - The first element of the group.
- * @param {U} b - The second element of the group.
+ * @param {T} a The first element of the group.
+ * @param {U} b The second element of the group.
  * @returns {V} Returns the new value of the group.
  */
