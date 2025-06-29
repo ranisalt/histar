@@ -13,7 +13,7 @@
   "type": "module",
   "main": "src/index.mjs",
   "module": "src/index.mjs",
-  "types": "src/index.d.ts",
+  "types": "src/index.d.mts",
   "files": [
     "src/*.mjs",
     "src/*.d.mts",
